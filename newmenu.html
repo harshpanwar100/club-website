@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,12 +22,18 @@
         box-sizing: border-box;
         color: aliceblue;
       }
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+      }
       html {
         scroll-behavior: smooth;
       }
 
       body {
-        background-color: black;
+        background-color: #0d0c11;
         font-family: "Wix Madefor Text", sans-serif;
         font-optical-sizing: auto;
         font-style: normal;
@@ -47,8 +56,9 @@
 
       .hero {
         background-image: url("menu.avif");
-        background-attachment: fixed;
-        background-size: contain;
+
+        background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
         height: 400px;
       }
@@ -58,9 +68,7 @@
         top: 0;
         width: 100%;
         z-index: 1000;
-        padding-left: 100px;
-        padding-right: 100px;
-        padding-top: 30px;
+        padding: 30px 5%;
         display: flex;
         justify-content: space-between;
         color: whitesmoke;
@@ -74,10 +82,10 @@
       }
       .menu {
         font-family: "Quicksand", sans-serif;
-        padding-top: 50px;
+        padding: 50px 5%;
         background-color: #0d0c11;
-        padding-left: 300px;
-        padding-right: 300px;
+        max-width: 1200px;
+        margin: 0 auto;
       }
       .menu-item {
         padding-top: 30px;
@@ -85,33 +93,107 @@
         align-items: center;
         justify-content: space-between;
         padding-bottom: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
       }
       .menu-item p {
         font-size: 25px;
       }
-      h1 {
-        font-size: 100px;
-      }
       .footer-container {
-        padding-top: 200px;
-        padding-bottom: 200px;
+        padding: 100px 5%;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
       }
       .footer-container p {
         padding-top: 10px;
+      }
+      .footer-sec {
+        flex: 1;
+        min-width: 250px;
       }
       a {
         text-decoration: none;
       }
       #footer {
         background-color: #0d0c11;
-        padding-left: 100px;
-        padding-right: 100px;
+        padding: 0 5%;
       }
       hr {
         color: grey;
         border-color: grey;
+      }
+      .menu-icon {
+        display: none;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 1024px) {
+        .navbar {
+          padding: 20px 5%;
+        }
+        .navigation {
+          gap: 20px;
+        }
+        .menu-item p {
+          font-size: 20px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .navbar {
+          padding: 15px 5%;
+        }
+        .navigation {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background: rgba(0, 0, 0, 0.9);
+          width: 200px;
+          text-align: right;
+          padding: 20px;
+          gap: 15px;
+        }
+        .navigation.show {
+          display: flex;
+        }
+        .navigation a {
+          display: block;
+          padding: 10px;
+        }
+        .menu-icon {
+          display: block;
+        }
+        .menu {
+          padding: 30px 5%;
+        }
+        .menu-item {
+          flex-direction: column;
+          text-align: center;
+          gap: 5px;
+        }
+        .menu-item p {
+          font-size: 18px;
+        }
+        h1 {
+          font-size: 40px !important;
+          text-align: center;
+        }
+        .menu p {
+          text-align: center;
+          margin: 0 auto;
+        }
+        .footer-container {
+          text-align: center;
+        }
+        .footer-sec {
+          text-align: center;
+          align-items: center;
+        }
       }
     </style>
   </head>
@@ -129,10 +211,11 @@
             >BAR</span
           >
         </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <div class="navigation">
-          <a href="home.html" class="navbut"><p>What's On</p></a>
+          <a href="index.html" class="navbut"><p>What's On</p></a>
           <a class="navbut"><span style="color: orange">Menu</span></a>
-          <a href="home.html#reservation" class="navbut"
+          <a href="index.html#reservation" class="navbut"
             ><span>Book a Table</span></a
           >
           <a href="#footer" class="navbut"><span>Contact</span></a>
@@ -143,7 +226,7 @@
       <p style="padding-bottom: 30px">Delicious Pub Food & Drinks</p>
       <h1 class="text-6xl font-bold" style="font-family: Red Rose">Menu</h1>
       <p>
-        I’m a menu description. Click me and then “Edit Menu” to open the
+        I'm a menu description. Click me and then "Edit Menu" to open the
         Restaurant Menu editor and change my text.
       </p>
       <h1
@@ -158,7 +241,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <hr style="width: 100%" />
@@ -167,7 +250,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <hr style="width: 100%" />
@@ -176,7 +259,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <hr style="width: 100%" />
@@ -185,7 +268,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <hr style="width: 100%" />
@@ -194,7 +277,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <h1
@@ -209,7 +292,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <hr style="width: 100%" />
@@ -218,7 +301,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <hr style="width: 100%" />
@@ -227,7 +310,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <hr style="width: 100%" />
@@ -236,7 +319,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <h1
@@ -251,7 +334,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <hr style="width: 100%" />
@@ -260,7 +343,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 30px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
       <hr style="width: 100%" />
@@ -269,7 +352,7 @@
         <p>$9.99</p>
       </div>
       <p style="padding-bottom: 100px" class="w-2/3">
-        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        I'm a dish description. Click "Edit Menu" to open the Restaurant Menu
         editor and change my text.
       </p>
     </div>
@@ -289,9 +372,9 @@
           style="display: flex; flex-direction: column; gap: 10px"
         >
           <h2 class="text-4xl">Bar</h2>
-          <a href="home.html"><p>What's On</p></a>
+          <a href="index.html"><p>What's On</p></a>
           <a href="menu.html" class="navbut"><span>Menu</span></a>
-          <a href="home.html#reservation"><span>Book a Table</span></a>
+          <a href="index.html#reservation"><span>Book a Table</span></a>
           <a href="#footer"><span>Contact</span></a>
         </div>
         <div class="footer-sec">
@@ -328,8 +411,11 @@
           }, 500); // Adjust time to match CSS transition
         });
       });
-    </script>
-    <script>
+
+      function toggleMenu() {
+        document.querySelector(".navigation").classList.toggle("show");
+      }
+
       let lastScrollY = window.scrollY;
       const navbar = document.querySelector(".navbar");
 
