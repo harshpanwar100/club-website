@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Red+Rose:wght@300..700&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: aliceblue;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: black;
+        font-family: "Wix Madefor Text", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        transition: background-color 0.5s ease-out;
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in forwards;
+      }
+      .fade-out {
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .hero {
+        position: relative;
+        height: 140vh;
+        background-image: url("./assets/herobg.avif");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+      .navbar {
+        transition: top 0.3s ease-in-out;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        color: whitesmoke;
+        flex-direction: row;
+        align-items: center;
+      }
+      .navigation {
+        font-size: 16px;
+        display: flex;
+        gap: 60px;
+      }
+      .centerbar {
+        border-top-left-radius: 70%;
+        margin: auto;
+        border-top-right-radius: 70%;
+        background-color: #0d0c11;
+        height: 700px;
+        width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        font-size: 20px;
+      }
+      .booktable {
+        background-color: #0d0c11;
+        border-width: 1px;
+        border-color: aliceblue;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 45px;
+        padding-right: 45px;
+        font-size: 17px;
+        box-shadow: none;
+        outline: none;
+      }
+      .content {
+        background-color: #0d0c11;
+        padding-left: 200px;
+        padding-right: 200px;
+        padding-top: 50px;
+      }
+      .about {
+        padding-top: 50px;
+        display: flex;
+        gap: 25%;
+        justify-content: space-between;
+        padding-bottom: 80px;
+      }
+      .whatson {
+        padding-top: 50px;
+      }
+      .whats-content1 {
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .photocol {
+        display: flex;
+      }
+      .navbut {
+        background-color: transparent;
+        text-decoration: none;
+      }
+      .footer-container {
+        padding-top: 200px;
+        padding-bottom: 200px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .footer-container p {
+        padding-top: 10px;
+      }
+      a {
+        text-decoration: none;
+      }
+      #footer {
+        background-color: #0d0c11;
+        padding-left: 70px;
+        padding-right: 70px;
+      }
+      .reservation {
+        background-color: #0d0c11;
+        color: white;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 60px;
+      }
+      #id {
+        background-color: transparent;
+        color: black;
+      }
+      option {
+        background-color: #0d0c11;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      select {
+        background-color: transparent;
+        padding-left: 10px;
+        padding-right: 170px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .res-sel {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 180px;
+        padding-right: 180px;
+      }
+      input {
+        background-color: transparent;
+        padding-left: 10px;
+        padding-right: 170px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        outline: none;
+        box-shadow: none;
+      }
+      .res-form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+      }
+      .res-form button {
+        background-color: orange;
+        color: black;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        outline: none;
+        box-shadow: none;
+      }
+      hr {
+        border-color: grey;
+      }
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .collage {
+        display: flex;
+
+        height: 90vh;
+        background-color: #000;
+      }
+
+      .main-photo {
+        flex: 1.2;
+        overflow: hidden;
+      }
+
+      .photo-grid {
+        flex: 0.8;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+      }
+
+      .photo-grid .top {
+        height: 100%;
+      }
+
+      .photo-grid .bottom {
+        height: 100%;
+      }
+
+      .photo {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .collage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .main-photo img:hover,
+      .photo img:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="hero" id="hero">
+      <div class="navbar">
+        <div>
+          <span
+            style="
+              font-size: 36px;
+              font-weight: 400;
+              color: aliceblue;
+              font-family: Red Rose;
+            "
+            >BAR</span
+          >
+        </div>
+        <div class="navigation">
+          <a href="#whatson" class="navbut"
+            ><p style="color: orange">What's On</p></a
+          >
+          <a href="menu.html" class="navbut"><span>Menu</span></a>
+          <a href="#reservation" class="navbut"><span>Book a Table</span></a>
+          <a href="#footer" class="navbut"><span>Contact</span></a>
+        </div>
+      </div>
+      <div style="padding-top: 200px; padding-bottom: 280px">
+        <div class="centerbar">
+          <h1 style="font-size: 180px; font-family: Red Rose" ;>BAR</h1>
+          <p>Local Bar With Live Music</p>
+          <a href="#reservation"
+            ><button class="booktable">Book a Table</button></a
+          >
+          <hr style="width: 350px" />
+          <p style="font-size: 13px">
+            500 Terry Francine St. San Francisco, CA 94158
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="about">
+        <div>
+          <h1 style="font-size: 70px; font-family: Red Rose">About</h1>
+          <p style="width: 113%">Your Neighbourhood Institution</p>
+        </div>
+        <div style="padding-right: 200px" class="w-1/2">
+          <p>
+            I'm a paragraph. Click here to add your own text and edit me. It’s
+            easy. Just click “Edit Text” or double click me to add your own
+            content and make changes to the font. I’m a great place for you to
+            tell a story and let your users know a little more about you.
+          </p>
+        </div>
+      </div>
+      <hr style="width: 100%" />
+      <div class="whatson" id="whatson">
+        <h1
+          class="text-7xl pt-10 pb-16 font-bold"
+          style="font-family: Red Rose"
+        >
+          What's On
+        </h1>
+        <div class="whats-content1">
+          <img src="./assets/whatson.avif" style="width: 600px" />
+          <div class="pr-47">
+            <p class="text-2xl">Happy Hour</p>
+            <p class="text-4xl pt-7 pb-7">50% on all cocktails</p>
+            <p>Monday to Thursday</p>
+            <p class="pb-7">3pm-6pm</p>
+            <a href="#reservation"
+              ><button class="booktable">Book a Table</button></a
+            >
+          </div>
+        </div>
+        <div
+          class="whats-content1"
+          style="padding-top: 220px; padding-bottom: 120px"
+        >
+          <div>
+            <p class="text-2xl">Friday Night Live</p>
+            <h1 class="text-4xl pt-7 pb-7">Harry Styles</h1>
+            <p>March 28th, 2025</p>
+            <p class="pb-7">8pm</p>
+            <a href="#reservation"
+              ><button class="booktable">Book a Table</button></a
+            >
+          </div>
+          <img src="./assets/singer.avif" style="width: 600px" />
+        </div>
+        <h1
+          style="
+            text-align: center;
+            padding-top: 0px;
+            padding-bottom: 150px;
+            font-size: 65px;
+            font-family: Red Rose;
+          "
+          class="font-bold"
+        >
+          Come Down & Grab a Pint
+        </h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="collage">
+        <!-- Large photo on the left -->
+        <div class="main-photo">
+          <img
+            src="./assets/bar3.jpg"
+            alt="Friends toasting with beer"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Grid of photos on the right -->
+        <div class="photo-grid">
+          <div class="photo top">
+            <img src="./assets/bar2.avif" alt="People at bar" loading="lazy" />
+          </div>
+          <div class="photo top">
+            <img src="./assets/bar4.jpg" alt="Bar ambiance" loading="lazy" />
+          </div>
+          <div class="photo bottom">
+            <img
+              src="./assets/bar5.jpg"
+              alt="Cocktail preparation"
+              loading="lazy"
+            />
+          </div>
+          <div class="photo bottom">
+            <img
+              src="./assets/bar1.jpg"
+              alt="Night club celebration"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reservation" id="reservation">
+      <h1
+        style="
+          font-size: 80px;
+          padding-bottom: 100px;
+          padding-top: 50px;
+          font-family: Red Rose;
+        "
+      >
+        Reserve a Table
+      </h1>
+      <div class="res-sel">
+        <div class="res-form">
+          <label for="size">Party Size</label>
+          <select id="size" name="size">
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+            <option value="6">6 guests</option>
+          </select>
+        </div>
+        <div class="res-form">
+          <label for="date">Date</label>
+          <input type="date" id="date" />
+        </div>
+        <div class="res-form">
+          <label for="time">Time</label>
+          <input type="time" id="time" name="time" />
+        </div>
+        <div class="res-form">
+          <br />
+          <button style="font-size: 20px">Find a Table</button>
+        </div>
+      </div>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.293690622357!2d77.21536577520234!3d28.620958684606705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2ca841a775b%3A0x7dbc369e9fde6a29!2sPRIVEE!5e0!3m2!1sen!2sin!4v1742072025195!5m2!1sen!2sin"
+      width="100%"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    <footer id="footer">
+      <div class="footer-container">
+        <div
+          class="footer-sec"
+          style="display: flex; flex-direction: column; gap: 10px"
+        >
+          <h2 class="text-4xl">Bar</h2>
+          <a href="#whatson"><p>What's On</p></a>
+          <a href="menu.html" class="navbut"><span>Menu</span></a>
+          <a href="#reservation"><span>Book a Table</span></a>
+          <a href="#footer"><span>Contact</span></a>
+        </div>
+        <div class="footer-sec">
+          <h2 class="text-4xl">Contact Us</h2>
+          <p>📞 Phone: +123 456 7890</p>
+          <p>✉ Email: info@yourbar.com</p>
+        </div>
+        <div class="footer-sec">
+          <h2 class="text-4xl">Our Location</h2>
+          <p>🏠 123 Bar Street,</p>
+          <p>🍹 Nightlife City, 56789</p>
+        </div>
+        <div class="footer-sec">
+          <h2 class="text-4xl">Opening Hours</h2>
+          <p>🕒 Mon-Fri: 5:00 PM - 2:00 AM</p>
+          <p>🕒 Sat-Sun: 6:00 PM - 3:00 AM</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.remove("fade-out");
+      });
+
+      document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Stop instant navigation
+          const href = this.href;
+
+          document.body.classList.add("fade-out"); // Apply fade-out effect
+
+          setTimeout(() => {
+            window.location.href = href; // Navigate after animation
+          }, 500); // Adjust time to match CSS transition
+        });
+      });
+    </script>
+    <script>
+      let lastScrollY = window.scrollY;
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > lastScrollY) {
+          // User is scrolling down, hide navbar
+          navbar.style.top = "-70px";
+        } else {
+          // User is scrolling up, show navbar
+          navbar.style.top = "0";
+        }
+        lastScrollY = window.scrollY;
+      });
+    </script>
+    <script>
+      window.addEventListener("scroll", function () {
+        let scrollPos = window.scrollY;
+        document.getElementById("hero").style.backgroundPositionY =
+          scrollPos * -0.5 + "px";
+      });
+    </script>
+  </body>
+</html>

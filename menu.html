@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Red+Rose:wght@300..700&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: aliceblue;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: black;
+        font-family: "Wix Madefor Text", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        transition: background-color 0.5s ease-out;
+        opacity: 0;
+        animation: fadeIn 0.5s ease-in forwards;
+      }
+      .fade-out {
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .hero {
+        background-image: url("./assets/menu.avif");
+        background-attachment: fixed;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 400px;
+      }
+      .navbar {
+        transition: top 0.3s ease-in-out;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        color: whitesmoke;
+        flex-direction: row;
+        align-items: center;
+      }
+      .navigation {
+        font-size: 16px;
+        display: flex;
+        gap: 60px;
+      }
+      .menu {
+        font-family: "Quicksand", sans-serif;
+        padding-top: 50px;
+        background-color: #0d0c11;
+        padding-left: 300px;
+        padding-right: 300px;
+      }
+      .menu-item {
+        padding-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+      }
+      .menu-item p {
+        font-size: 25px;
+      }
+      h1 {
+        font-size: 100px;
+      }
+      .footer-container {
+        padding-top: 200px;
+        padding-bottom: 200px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .footer-container p {
+        padding-top: 10px;
+      }
+      a {
+        text-decoration: none;
+      }
+      #footer {
+        background-color: #0d0c11;
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+      hr {
+        color: grey;
+        border-color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="navbar">
+        <div>
+          <span
+            style="
+              font-size: 36px;
+              font-weight: 400;
+              color: aliceblue;
+              font-family: Red Rose;
+            "
+            >BAR</span
+          >
+        </div>
+        <div class="navigation">
+          <a href="home.html" class="navbut"><p>What's On</p></a>
+          <a class="navbut"><span style="color: orange">Menu</span></a>
+          <a href="home.html#reservation" class="navbut"
+            ><span>Book a Table</span></a
+          >
+          <a href="#footer" class="navbut"><span>Contact</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="menu">
+      <p style="padding-bottom: 30px">Delicious Pub Food & Drinks</p>
+      <h1 class="text-6xl font-bold" style="font-family: Red Rose">Menu</h1>
+      <p>
+        I’m a menu description. Click me and then “Edit Menu” to open the
+        Restaurant Menu editor and change my text.
+      </p>
+      <h1
+        style="padding-top: 30px; padding-bottom: 30px"
+        class="text-4xl font-medium"
+      >
+        Beer & Wine
+      </h1>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>House IPA Beer</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>Leroy Lager Beer</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>Merlo Red Wine</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>Pino Grigio White Wine</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>House IPA Beer</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <h1
+        style="padding-top: 30px; padding-bottom: 30px"
+        class="text-4xl font-medium"
+      >
+        Cocktails
+      </h1>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>Classic Martini</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>Classic Mojito</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>Bloody Mary</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>Margarita</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <h1
+        style="padding-top: 30px; padding-bottom: 30px"
+        class="text-4xl font-medium"
+      >
+        From the Kitchen
+      </h1>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>House Fries</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>Nachos and Guacamole</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 30px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+      <hr style="width: 100%" />
+      <div class="menu-item">
+        <p>Burger</p>
+        <p>$9.99</p>
+      </div>
+      <p style="padding-bottom: 100px" class="w-2/3">
+        I’m a dish description. Click “Edit Menu” to open the Restaurant Menu
+        editor and change my text.
+      </p>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.293690622357!2d77.21536577520234!3d28.620958684606705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2ca841a775b%3A0x7dbc369e9fde6a29!2sPRIVEE!5e0!3m2!1sen!2sin!4v1742072025195!5m2!1sen!2sin"
+      width="100%"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    <footer id="footer">
+      <div class="footer-container">
+        <div
+          class="footer-sec"
+          style="display: flex; flex-direction: column; gap: 10px"
+        >
+          <h2 class="text-4xl">Bar</h2>
+          <a href="home.html"><p>What's On</p></a>
+          <a href="menu.html" class="navbut"><span>Menu</span></a>
+          <a href="home.html#reservation"><span>Book a Table</span></a>
+          <a href="#footer"><span>Contact</span></a>
+        </div>
+        <div class="footer-sec">
+          <h2 class="text-4xl">Contact Us</h2>
+          <p>📞 Phone: +123 456 7890</p>
+          <p>✉ Email: info@yourbar.com</p>
+        </div>
+        <div class="footer-sec">
+          <h2 class="text-4xl">Our Location</h2>
+          <p>🏠 123 Bar Street,</p>
+          <p>🍹 Nightlife City, 56789</p>
+        </div>
+        <div class="footer-sec">
+          <h2 class="text-4xl">Opening Hours</h2>
+          <p>🕒 Mon-Fri: 5:00 PM - 2:00 AM</p>
+          <p>🕒 Sat-Sun: 6:00 PM - 3:00 AM</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.body.classList.remove("fade-out");
+      });
+
+      document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault(); // Stop instant navigation
+          const href = this.href;
+
+          document.body.classList.add("fade-out"); // Apply fade-out effect
+
+          setTimeout(() => {
+            window.location.href = href; // Navigate after animation
+          }, 500); // Adjust time to match CSS transition
+        });
+      });
+    </script>
+    <script>
+      let lastScrollY = window.scrollY;
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > lastScrollY) {
+          // User is scrolling down, hide navbar
+          navbar.style.top = "-70px";
+        } else {
+          // User is scrolling up, show navbar
+          navbar.style.top = "0";
+        }
+        lastScrollY = window.scrollY;
+      });
+    </script>
+  </body>
+</html>
