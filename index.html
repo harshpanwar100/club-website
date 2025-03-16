@@ -18,12 +18,19 @@
         box-sizing: border-box;
         color: aliceblue;
       }
+      html,
+      body {
+        background-color: #0d0c11;
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+      }
       html {
         scroll-behavior: smooth;
       }
 
       body {
-        background-color: black;
+        background-color: #0d0c11;
         font-family: "Wix Madefor Text", sans-serif;
         font-optical-sizing: auto;
         font-style: normal;
@@ -45,7 +52,7 @@
       }
       .hero {
         position: relative;
-        height: 140vh;
+        height: 160vh;
         background-image: url("herobg.avif");
         background-attachment: fixed;
         background-size: cover;
@@ -57,9 +64,7 @@
         top: 0;
         width: 100%;
         z-index: 1000;
-        padding-left: 100px;
-        padding-right: 100px;
-        padding-top: 30px;
+        padding: 30px 5%;
         display: flex;
         justify-content: space-between;
         color: whitesmoke;
@@ -76,39 +81,46 @@
         margin: auto;
         border-top-right-radius: 70%;
         background-color: #0d0c11;
-        height: 700px;
-        width: 600px;
+        height: auto;
+        max-width: 600px;
+        width: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         gap: 30px;
         font-size: 20px;
+        padding: 100px 20px;
       }
       .booktable {
         background-color: #0d0c11;
-        border-width: 1px;
-        border-color: aliceblue;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        padding-left: 45px;
-        padding-right: 45px;
+        border: 1px solid aliceblue;
+        padding: 15px 45px;
         font-size: 17px;
         box-shadow: none;
         outline: none;
       }
       .content {
         background-color: #0d0c11;
-        padding-left: 200px;
-        padding-right: 200px;
-        padding-top: 50px;
+        padding: 50px 5%;
+        width: 100%;
       }
       .about {
         padding-top: 50px;
         display: flex;
-        gap: 25%;
+        flex-direction: row;
+        gap: 5%;
         justify-content: space-between;
         padding-bottom: 80px;
+        flex-wrap: wrap;
+      }
+      .about div {
+        flex: 1;
+        min-width: 280px;
+        max-width: 100%;
+      }
+      .about p {
+        width: 100% !important;
       }
       .whatson {
         padding-top: 50px;
@@ -118,72 +130,66 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      .whats-content1 img {
+        max-width: 100%;
+        height: auto;
       }
       .photocol {
         display: flex;
+        flex-wrap: wrap;
       }
       .navbut {
         background-color: transparent;
         text-decoration: none;
       }
       .footer-container {
-        padding-top: 200px;
-        padding-bottom: 200px;
+        padding: 100px 5%;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
       }
       .footer-container p {
         padding-top: 10px;
+      }
+      .footer-sec {
+        flex: 1;
+        min-width: 250px;
       }
       a {
         text-decoration: none;
       }
       #footer {
         background-color: #0d0c11;
-        padding-left: 70px;
-        padding-right: 70px;
+        padding: 0 5%;
       }
       .reservation {
         background-color: #0d0c11;
         color: white;
         text-align: center;
-        padding-top: 30px;
-        padding-bottom: 60px;
+        padding: 30px 5% 60px;
       }
-      #id {
-        background-color: transparent;
-        color: black;
-      }
-      option {
+      select,
+      input {
         background-color: #0d0c11;
-        padding-left: 40px;
-        padding-right: 40px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-      select {
-        background-color: transparent;
-        padding-left: 10px;
-        padding-right: 170px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px;
+        width: 100%;
+        max-width: 300px;
+        border-width: 1px;
+        box-shadow: none;
       }
       .res-sel {
         display: flex;
-        justify-content: space-between;
-        padding-left: 180px;
-        padding-right: 180px;
-      }
-      input {
-        background-color: transparent;
-        padding-left: 10px;
-        padding-right: 170px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        outline: none;
-        box-shadow: none;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding: 0 5%;
       }
       .res-form {
+        min-width: 250px;
         display: flex;
         flex-direction: column;
         align-items: start;
@@ -191,10 +197,8 @@
       .res-form button {
         background-color: orange;
         color: black;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px 20px;
+        width: 100%;
         outline: none;
         box-shadow: none;
       }
@@ -202,40 +206,37 @@
         border-color: grey;
       }
       .container {
+        background-color: #0d0c11;
         max-width: 1400px;
         margin: 0 auto;
         width: 100%;
+        padding: 0 5%;
       }
 
       .collage {
         display: flex;
-
-        height: 90vh;
-        background-color: #000;
+        gap: 0px;
+        height: auto;
+        background-color: #0d0c11;
+        flex-direction: column;
       }
 
       .main-photo {
-        flex: 1.2;
+        flex: 1 1 300px;
+        min-height: 400px;
         overflow: hidden;
       }
 
       .photo-grid {
-        flex: 0.8;
+        flex: 1 1 300px;
         display: grid;
-        grid-template-rows: repeat(2, 1fr);
-      }
-
-      .photo-grid .top {
-        height: 100%;
-      }
-
-      .photo-grid .bottom {
-        height: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       }
 
       .photo {
         overflow: hidden;
         position: relative;
+        aspect-ratio: 1;
       }
 
       .collage img {
@@ -245,9 +246,83 @@
         transition: transform 0.5s ease;
       }
 
+      .menu-icon {
+        display: none;
+        font-size: 30px;
+        cursor: pointer;
+      }
+
       .main-photo img:hover,
       .photo img:hover {
         transform: scale(1.05);
+      }
+
+      @media screen and (max-width: 1024px) {
+        .navbar {
+          padding: 20px 5%;
+        }
+        .navigation {
+          gap: 20px;
+        }
+        .centerbar {
+          border-top-left-radius: 200%;
+          border-top-right-radius: 200%;
+          padding: 40px 20px;
+        }
+        .centerbar h1 {
+          font-size: 80px !important;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .hero {
+          height: 110vh;
+        }
+        .navbar {
+          padding: 15px 5%;
+        }
+        .navigation {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          right: 0;
+          background: rgba(0, 0, 0, 0.9);
+          width: 200px;
+          text-align: right;
+          padding: 20px;
+          gap: 15px;
+        }
+        .navigation.show {
+          display: flex;
+        }
+        .navigation a {
+          display: block;
+          padding: 10px;
+        }
+        .menu-icon {
+          display: block;
+        }
+        .about {
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+        }
+        .whats-content1 {
+          flex-direction: column;
+          text-align: center;
+        }
+        .res-sel {
+          flex-direction: column;
+          align-items: center;
+        }
+        .res-form {
+          width: 100%;
+          align-items: center;
+        }
+        h1 {
+          font-size: 40px !important;
+        }
       }
     </style>
   </head>
@@ -266,11 +341,12 @@
             >BAR</span
           >
         </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
         <div class="navigation">
           <a href="#whatson" class="navbut"
             ><p style="color: orange">What's On</p></a
           >
-          <a href="menu.html" class="navbut"><span>Menu</span></a>
+          <a href="newmenu.html" class="navbut"><span>Menu</span></a>
           <a href="#reservation" class="navbut"><span>Book a Table</span></a>
           <a href="#footer" class="navbut"><span>Contact</span></a>
         </div>
@@ -295,7 +371,7 @@
           <h1 style="font-size: 70px; font-family: Red Rose">About</h1>
           <p style="width: 113%">Your Neighbourhood Institution</p>
         </div>
-        <div style="padding-right: 200px" class="w-1/2">
+        <div>
           <p>
             I'm a paragraph. Click here to add your own text and edit me. It’s
             easy. Just click “Edit Text” or double click me to add your own
@@ -313,7 +389,7 @@
           What's On
         </h1>
         <div class="whats-content1">
-          <img src="whatson.avif" style="width: 600px" />
+          <img src=" whatson.avif" style="width: 600px" />
           <div class="pr-47">
             <p class="text-2xl">Happy Hour</p>
             <p class="text-4xl pt-7 pb-7">50% on all cocktails</p>
@@ -337,7 +413,7 @@
               ><button class="booktable">Book a Table</button></a
             >
           </div>
-          <img src="singer.avif" style="width: 600px" />
+          <img src=" singer.avif" style="width: 600px" />
         </div>
         <h1
           style="
@@ -358,7 +434,7 @@
         <!-- Large photo on the left -->
         <div class="main-photo">
           <img
-            src="bar3.jpg"
+            src=" bar3.jpg"
             alt="Friends toasting with beer"
             loading="lazy"
           />
@@ -367,21 +443,21 @@
         <!-- Grid of photos on the right -->
         <div class="photo-grid">
           <div class="photo top">
-            <img src="bar2.avif" alt="People at bar" loading="lazy" />
+            <img src=" bar2.avif" alt="People at bar" loading="lazy" />
           </div>
           <div class="photo top">
-            <img src="bar4.jpg" alt="Bar ambiance" loading="lazy" />
+            <img src=" bar4.jpg" alt="Bar ambiance" loading="lazy" />
           </div>
           <div class="photo bottom">
             <img
-              src="bar5.jpg"
+              src=" bar5.jpg"
               alt="Cocktail preparation"
               loading="lazy"
             />
           </div>
           <div class="photo bottom">
             <img
-              src="bar1.jpg"
+              src=" bar1.jpg"
               alt="Night club celebration"
               loading="lazy"
             />
@@ -444,7 +520,7 @@
         >
           <h2 class="text-4xl">Bar</h2>
           <a href="#whatson"><p>What's On</p></a>
-          <a href="menu.html" class="navbut"><span>Menu</span></a>
+          <a href="newmenu.html" class="navbut"><span>Menu</span></a>
           <a href="#reservation"><span>Book a Table</span></a>
           <a href="#footer"><span>Contact</span></a>
         </div>
@@ -504,6 +580,11 @@
         document.getElementById("hero").style.backgroundPositionY =
           scrollPos * -0.5 + "px";
       });
+    </script>
+    <script>
+      function toggleMenu() {
+        document.querySelector(".navigation").classList.toggle("show");
+      }
     </script>
   </body>
 </html>
